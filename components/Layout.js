@@ -11,7 +11,7 @@ const Layout = ({ children, ...pageProps }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <body>{children}</body>
+      <div>{children}</div>
       {/* footer */}
     </>
   );

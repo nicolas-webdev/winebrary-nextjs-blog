@@ -13,6 +13,7 @@ const NewPost = ({ post }) => {
             height={90}
             alt={post.title}
             className="newPost__image"
+            layout="responsive"
           />
         </a>
       </Link>

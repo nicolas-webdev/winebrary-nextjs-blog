@@ -4,7 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Noto Serif JP", serif, -apple-system, BlinkMacSystemFont,
+  font-family: "Noto Sans JP", serif, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
   font-size: 16px;
@@ -59,7 +59,19 @@ a {
   letter-spacing: 0.08rem;
 }
 
+.header__topBanner__rightText > a:hover {
+  color: #fab947;
+}
+
 /* NAV */
+
+nav {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .header__nav__wrapper {
   background: white;
   display: flex;
@@ -93,6 +105,10 @@ a {
   flex: 0.2;
 }
 
+.header__logo__icon:active {
+  transform: rotate(-20deg);
+}
+
 .header__logo__text {
   font-family: "Ruluko";
   font-style: normal;
@@ -123,6 +139,7 @@ a {
 
 .header__links > a:hover {
   filter: brightness(1.1);
+  transform: scale(1.02);
 }
 
 /* search */
@@ -162,7 +179,7 @@ a {
 
 .featuredPost__cover {
   max-width: 100%;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
 }
 
 .featuredPost__cover:hover {
@@ -183,8 +200,81 @@ main {
 /* left column  */
 .leftColumn {
   width: 746px;
-  /* height: 1000px;
-  background: black; */
+}
+
+.leftColumn .textbox > h1 {
+  background: #d76655;
+  color: white;
+  text-align: center;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+  font-family: "Poppins", "Helvetica", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.08rem;
+}
+
+.leftColumn .textbox > p {
+  color: #505050;
+  padding: 1rem;
+  background: white;
+  font-family: Noto Sans JP, serif, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  letter-spacing: 0.005em;
+}
+
+.recommendedPosts {
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.recommendedPosts__post1,
+.recommendedPosts__post2 {
+  max-height: 212px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: flex-end;
+}
+
+.recommendedPosts__post1:hover,
+.recommendedPosts__post2:hover {
+  transform: scale(1.05);
+  filter: brightness(1.02);
+  cursor: pointer;
+}
+
+.recommendedPosts__left {
+  margin-right: 1rem;
+}
+
+.recommendedPosts__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.recommendedPosts__right__tab {
+  width: 100%;
+  height: 30px;
+  background: #f6b8b8;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+}
+
+.recommendedPosts a {
+  line-height: 0;
 }
 
 /* right column */
@@ -192,10 +282,8 @@ main {
 .rightColumn {
   width: 238px;
   min-width: 220px;
-  /* height: 1000px;
-  background: black; */
+  margin-left: 1rem;
 }
-
 /* New Posts */
 
 .newPosts {
@@ -206,12 +294,15 @@ main {
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .newPosts__wrapper {
   background: white;
   margin: 1rem;
   padding-bottom: 1rem;
+  width: 100%;
 }
 
 .newPosts__title {
@@ -229,6 +320,7 @@ main {
   text-align: center;
   margin-left: -5px;
   letter-spacing: 1px;
+  cursor: default;
 }
 
 .newPosts__title > p::before {
@@ -242,6 +334,7 @@ main {
 
 .newPost:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 /* Categories */
