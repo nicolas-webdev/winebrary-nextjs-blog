@@ -13,7 +13,6 @@ const FeaturedPost = ({ post }) => {
             alt={post.title}
             height={525}
             width={1000}
-            layout="responsive"
           />
         </a>
       </Link>

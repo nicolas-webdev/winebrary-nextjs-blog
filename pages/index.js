@@ -19,20 +19,6 @@ export default function Home({ posts, tags }) {
   );
 }
 
-// {posts.map((post) => (
-//   <Link href={`/${post.slug}`}>
-//     <a>
-//       <ul key={post.id}>
-//         <li>{post.slug}</li>
-//         <li>{post.dateFormatted}</li>
-//         <li>{post.title}</li>
-//         <li>{post.excerpt}</li>
-//         <img src={post.feature_image} alt="" />
-//       </ul>
-//     </a>
-//   </Link>
-// ))}
-
 export async function getStaticProps(context) {
   const posts = await getPosts();
 

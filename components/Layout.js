@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Header from "./Header";
+import Footer from "./Footer";
 import { metadata } from "../lib/meta";
 
 const Layout = ({ children, ...pageProps }) => {
@@ -12,7 +13,7 @@ const Layout = ({ children, ...pageProps }) => {
       </Head>
       <Header />
       <div>{children}</div>
-      {/* footer */}
+      <Footer />
     </>
   );
 };
