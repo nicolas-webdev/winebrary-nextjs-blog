@@ -1,28 +1,37 @@
 import { getPosts } from "../lib/posts";
 import Link from "next/link";
 import Layout from "../components/Layout";
+import FeaturedPost from "../components/FeaturedPost";
+import LeftColumn from "../components/LeftColumn";
+import RightColumn from "../components/RightColumn";
 
 export default function Home({ posts }) {
   return (
     <Layout>
       <div className="index">
-        {posts.map((post) => (
-          <Link href={`/${post.slug}`}>
-            <a>
-              <ul key={post.id}>
-                <li>{post.slug}</li>
-                <li>{post.dateFormatted}</li>
-                <li>{post.title}</li>
-                <li>{post.excerpt}</li>
-                <img src={post.feature_image} alt="" />
-              </ul>
-            </a>
-          </Link>
-        ))}
+        <FeaturedPost post={posts[0]} />
+        <main>
+          <LeftColumn />
+          <RightColumn />
+        </main>
       </div>
     </Layout>
   );
 }
+
+// {posts.map((post) => (
+//   <Link href={`/${post.slug}`}>
+//     <a>
+//       <ul key={post.id}>
+//         <li>{post.slug}</li>
+//         <li>{post.dateFormatted}</li>
+//         <li>{post.title}</li>
+//         <li>{post.excerpt}</li>
+//         <img src={post.feature_image} alt="" />
+//       </ul>
+//     </a>
+//   </Link>
+// ))}
 
 export async function getStaticProps(context) {
   const posts = await getPosts();

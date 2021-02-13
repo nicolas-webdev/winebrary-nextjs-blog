@@ -1,8 +1,9 @@
 import React from "react";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__topBanner__wrapper">
         <div className="header__topBanner">
           <div className="header__topBanner__leftText">
@@ -15,12 +16,16 @@ const Header = () => {
       </div>
       <nav className="header__nav__wrapper">
         <div className="header__nav">
-          <div className="header__logo">
-            <div className="header__logo__icon">
-              <img src="/logo.svg" alt="logo" />
-            </div>
-            <div className="header__logo__text">The Winebrary</div>
-          </div>
+          <Link href="/">
+            <a>
+              <div className="header__logo">
+                <div className="header__logo__icon">
+                  <img src="/logo.svg" alt="logo" />
+                </div>
+                <div className="header__logo__text">The Winebrary</div>
+              </div>
+            </a>
+          </Link>
           <div className="header__links">
             <a href="/category1">ワイン基礎知識</a>
             <a href="/category2">ワイン学習</a>
@@ -56,7 +61,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 
