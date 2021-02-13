@@ -56,8 +56,7 @@ export async function getStaticProps(context) {
 
   const tags = [];
   for (let i = 0; i < categories.length; i++) {
-    // let posts = await getPostsByTag(categories[i].name);
-    let posts = ["1", "2"];
+    let posts = await getPostsByTag(categories[i].url);
     let name = categories[i].name;
     let url = categories[i].url;
     let color = categories[i].color;
