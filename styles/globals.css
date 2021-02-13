@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Ruluko&display=swap");
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Noto Serif JP", serif, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  font-size: 16px;
 }
 
 a {
@@ -13,4 +16,131 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+.header__topBanner__wrapper {
+  background: #8a3940;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 50px;
+}
+
+.header__topBanner {
+  height: 50px;
+  color: white;
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 4px;
+}
+
+.header__topBanner__leftText > p {
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.05rem;
+  border-bottom: 2px solid #d76655;
+}
+
+.header__topBanner__rightText > a {
+  font-weight: normal;
+  font-size: 0.6rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.08rem;
+}
+
+/* NAV */
+.header__nav__wrapper {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 90px;
+  margin: 0 14px;
+}
+
+.header__nav {
+  background: white;
+  flex: 1;
+  max-width: 1000px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo */
+.header__logo {
+  display: flex;
+  /* flex: 0.3; */
+  flex-shrink: 1;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header__logo__icon {
+  flex: 0.2;
+}
+
+.header__logo__text {
+  font-family: "Ruluko";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #8a3940;
+  flex: 0.8;
+  text-align: left;
+  min-width: 170px;
+}
+
+/* links */
+.header__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.header__links > a {
+  color: #d76655;
+  font-size: 1rem;
+  letter-spacing: 0.06rem;
+  font-weight: light;
+  transition: hover 0.3 ease-in;
+}
+
+.header__links > a:hover {
+  filter: brightness(1.1);
+}
+
+/* search */
+.header__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* flex: 0.2; */
+}
+
+.header__search input {
+  padding: 0.5rem;
+  padding-left: 2rem;
+  outline: none;
+  border: 2px solid rgba(215, 102, 85, 0.7);
+  border-radius: 14px;
+  color: #252525;
+}
+
+.header__search svg {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
 }

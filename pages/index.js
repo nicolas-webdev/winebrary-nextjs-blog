@@ -1,29 +1,26 @@
-import Head from "next/head";
 import { getPosts } from "../lib/posts";
 import Link from "next/link";
+import Layout from "../components/Layout";
 
 export default function Home({ posts }) {
   return (
-    <div className="index">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      {posts.map((post) => (
-        <Link href={`/${post.slug}`}>
-          <a>
-            <ul key={post.id}>
-              <li>{post.slug}</li>
-              <li>{post.dateFormatted}</li>
-              <li>{post.title}</li>
-              <li>{post.excerpt}</li>
-              <img src={post.feature_image} alt="" />
-            </ul>
-          </a>
-        </Link>
-      ))}
-    </div>
+    <Layout>
+      <div className="index">
+        {posts.map((post) => (
+          <Link href={`/${post.slug}`}>
+            <a>
+              <ul key={post.id}>
+                <li>{post.slug}</li>
+                <li>{post.dateFormatted}</li>
+                <li>{post.title}</li>
+                <li>{post.excerpt}</li>
+                <img src={post.feature_image} alt="" />
+              </ul>
+            </a>
+          </Link>
+        ))}
+      </div>
+    </Layout>
   );
 }
 
