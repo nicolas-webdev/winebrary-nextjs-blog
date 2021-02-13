@@ -1,9 +1,12 @@
 import React from "react";
+import NewPosts from "./NewPosts";
+import CategoryList from "./CategoryList";
 
-const RightColumn = () => {
+const RightColumn = ({ posts }) => {
   return (
     <div className="rightColumn">
-      <h1>hi</h1>
+      <NewPosts posts={posts} />
+      <CategoryList />
     </div>
   );
 };

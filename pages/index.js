@@ -1,5 +1,4 @@
 import { getPosts } from "../lib/posts";
-import Link from "next/link";
 import Layout from "../components/Layout";
 import FeaturedPost from "../components/FeaturedPost";
 import LeftColumn from "../components/LeftColumn";
@@ -11,8 +10,8 @@ export default function Home({ posts }) {
       <div className="index">
         <FeaturedPost post={posts[0]} />
         <main>
-          <LeftColumn />
-          <RightColumn />
+          <LeftColumn posts={posts} />
+          <RightColumn posts={posts} />
         </main>
       </div>
     </Layout>

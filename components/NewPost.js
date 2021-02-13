@@ -2,17 +2,17 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const FeaturedPost = ({ post }) => {
+const NewPost = ({ post }) => {
   return (
-    <div className="featuredPost">
+    <div className="newPost">
       <Link href={`/${post.slug}`}>
         <a>
           <Image
-            className="featuredPost__cover"
             src={post.feature_image}
+            width={172}
+            height={90}
             alt={post.title}
-            height={525}
-            width={1000}
+            className="newPost__image"
           />
         </a>
       </Link>
@@ -20,4 +20,4 @@ const FeaturedPost = ({ post }) => {
   );
 };
 
-export default FeaturedPost;
+export default NewPost;
