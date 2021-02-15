@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 import Search from "./Search";
 import NavLinks from "./NavLinks";
@@ -12,7 +13,9 @@ const Header = () => {
             <p>ワインがもっと好きになるワイン情報ブログ</p>
           </div>
           <div className="header__topBanner__rightText">
-            <a href="/wine-beginners-guide">▲初めての方はこちらへ</a>
+            <Link href="/category/wine-beginners-guide">
+              <a>▲初めての方はこちらへ</a>
+            </Link>
           </div>
         </div>
       </div>
