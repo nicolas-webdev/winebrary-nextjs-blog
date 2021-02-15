@@ -11,7 +11,7 @@ const PostPage = ({ posts, post, titles }) => {
   // Render post title and content in the page from props
 
   return (
-    <Layout>
+    <Layout title={`${post.title} | The Winebrary`}>
       <div className="blog">
         <main>
           <div className="blog__left">

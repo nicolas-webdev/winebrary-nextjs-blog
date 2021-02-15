@@ -4,12 +4,12 @@ import React from "react";
 import Layout from "../../components/Layout";
 import LeftColumn from "../../components/LeftColumn";
 import RightColumn from "../../components/RightColumn";
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 
 const Category = ({ category, posts, categoryPosts }) => {
   return (
-    <Layout>
+    <Layout title={category.name}>
       <div className="Category">
         <main>
           <div className="category__left">
