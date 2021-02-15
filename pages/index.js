@@ -6,10 +6,11 @@ import RightColumn from "../components/RightColumn";
 import categories from "../lib/categories";
 
 export default function Home({ posts, tags }) {
+  console.log(tags[0].posts);
   return (
     <Layout>
       <div className="index">
-        <FeaturedPost post={posts[3]} />
+        <FeaturedPost post={posts[0]} />
         <main>
           <LeftColumn posts={posts} index={true} tags={tags} />
           <RightColumn posts={posts} />
