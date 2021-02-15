@@ -9,7 +9,7 @@ import { InlineShareButtons } from "sharethis-reactjs";
 // PostPage page component
 const PostPage = ({ posts, post, titles }) => {
   // Render post title and content in the page from props
-  console.log(post.authors);
+
   return (
     <Layout>
       <div className="blog">
@@ -69,8 +69,8 @@ const PostPage = ({ posts, post, titles }) => {
               <div className="blog__post__body">
                 <div className="blog__post__toc">
                   <ol id="toc">
-                    {titles.map((title) => (
-                      <li>{title}</li>
+                    {titles.map((title, index) => (
+                      <li key={index}>{title}</li>
                     ))}
                   </ol>
                 </div>

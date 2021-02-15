@@ -3,7 +3,6 @@ import { getPosts } from "../lib/posts";
 import React from "react";
 
 const post = ({ posts }) => {
-  console.log(posts);
   return (
     <div>
       {posts.map((post) => (

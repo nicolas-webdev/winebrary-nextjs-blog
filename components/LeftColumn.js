@@ -11,19 +11,13 @@ const LeftColumn = ({
   posts,
   categoryPosts = undefined,
 }) => {
-  const indexContent = `
-  レストランやバルで、ドリンクメニューとして見かける機会も増えたワイン。
-  そんなワインですが、一体どんなお酒かご存知ですか？ワインの定義など分かりやすく解説いたします！レストランやバルで、ドリンクメニューとして見かける機会も増えたワイン。
-  そんなワインですが、一体どんなお酒かご存知ですか？ワインの定義など分かりやすく解説いたします！そんなワインですが、一体どんなお酒かご存知ですか？ワインの定義など分かりやすく解説いたします！  `;
   return (
     <div className="leftColumn">
       <TextBox
         title={index ? "About" : category.name}
-        content={index ? indexContent : category.description}
+        content={index ? posts[0].authors[0].bio : category.description}
       />
-      {!index && (
-        <CategoryPosts category={category} categoryPosts={categoryPosts} />
-      )}
+      {!index && <CategoryPosts categoryPosts={categoryPosts} />}
       <RecommendedPosts posts={posts} />
       {index && <CategoryGallery tags={tags} />}
     </div>
