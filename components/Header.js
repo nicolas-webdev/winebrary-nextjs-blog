@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-import Search from "./Search";
+// import Search from "./Search";
 import NavLinks from "./NavLinks";
 
 const Header = () => {
@@ -23,7 +23,7 @@ const Header = () => {
         <div className="header__nav">
           <Logo position="header" />
           <NavLinks />
-          <Search />
+          {/* <Search /> */}
         </div>
       </nav>
     </header>
