@@ -9,7 +9,7 @@ import { InlineShareButtons } from "sharethis-reactjs";
 // PostPage page component
 const PostPage = ({ posts, post, titles }) => {
   // Render post title and content in the page from props
-
+  console.log(titles);
   return (
     <Layout title={`${post.title} | The Winebrary`}>
       <div className="blog">
@@ -69,9 +69,7 @@ const PostPage = ({ posts, post, titles }) => {
               <div className="blog__post__body">
                 <div className="blog__post__toc">
                   <ol id="toc">
-                    {titles.map((title, index) => (
-                      <li key={index}>{title}</li>
-                    ))}
+                    <div dangerouslySetInnerHTML={{ __html: titles }} />
                   </ol>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -133,6 +131,9 @@ export async function getStaticProps(context) {
     ...postContent.matchAll(/<h[2].*>(?<heading>.*?)<\/h[2]>/g),
   ];
   const titles = headings.map((heading) => heading.groups.heading);
+  const linkedTitles = titles
+    .map((title, index) => `<li><a href="#${index + 1}">${title}</a></li>`)
+    .join("");
 
   const options = {
     year: "numeric",
@@ -145,6 +146,6 @@ export async function getStaticProps(context) {
   );
 
   return {
-    props: { post, posts, titles },
+    props: { post, posts, titles: linkedTitles },
   };
 }

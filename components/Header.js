@@ -10,7 +10,12 @@ const Header = () => {
       <div className="header__topBanner__wrapper">
         <div className="header__topBanner">
           <div className="header__topBanner__leftText">
-            <p>ワインがもっと好きになるワイン情報ブログ</p>
+            <p>
+              <span>
+                <img src="/grape-logo.png" height={15} width={15} alt="logo" />
+              </span>{" "}
+              ワインがもっと好きになるワイン情報ブログ
+            </p>
           </div>
           <div className="header__topBanner__rightText">
             <Link href="/category/wine-beginners-guide">

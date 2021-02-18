@@ -1,15 +1,17 @@
-import { getPosts, getPostsByTag } from "../lib/posts";
+import { getPosts, getPostsByTag, getSettings } from "../lib/posts";
 import Layout from "../components/Layout";
-import FeaturedPost from "../components/FeaturedPost";
+// import FeaturedPost from "../components/FeaturedPost";
+import CoverImage from "../components/CoverImage";
 import LeftColumn from "../components/LeftColumn";
 import RightColumn from "../components/RightColumn";
 import categories from "../lib/categories";
 
-export default function Home({ posts, tags }) {
+export default function Home({ posts, tags, coverImage }) {
   return (
     <Layout>
       <div className="index">
-        <FeaturedPost post={posts[0]} />
+        {/* <FeaturedPost post={posts[0]} /> */}
+        <CoverImage featureImage={coverImage} />
         <main>
           <LeftColumn posts={posts} index={true} tags={tags} />
           <RightColumn posts={posts} />
@@ -20,6 +22,9 @@ export default function Home({ posts, tags }) {
 }
 
 export async function getStaticProps(context) {
+  const settings = await getSettings();
+  const coverImage = settings.cover_image;
+
   const posts = await getPosts();
 
   if (!posts) {
@@ -57,6 +62,6 @@ export async function getStaticProps(context) {
   }
 
   return {
-    props: { posts, tags },
+    props: { posts, tags, coverImage },
   };
 }
