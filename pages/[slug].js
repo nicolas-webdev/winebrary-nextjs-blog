@@ -130,7 +130,7 @@ export async function getStaticProps(context) {
 
   const postContent = post.html;
   const headings = [
-    ...postContent.matchAll(/<h[2-3].*>(?<heading>.*?)<\/h[2-3]>/g),
+    ...postContent.matchAll(/<h[2].*>(?<heading>.*?)<\/h[2]>/g),
   ];
   const titles = headings.map((heading) => heading.groups.heading);
 
