@@ -7,9 +7,9 @@ import Link from "next/link";
 import { InlineShareButtons } from "sharethis-reactjs";
 
 // PostPage page component
-const PostPage = ({ posts, post, titles }) => {
+const PostPage = ({ posts, post, titles, updatedContent }) => {
   // Render post title and content in the page from props
-  console.log(titles);
+  console.log(updatedContent);
   return (
     <Layout title={`${post.title} | The Winebrary`}>
       <div className="blog">
@@ -127,6 +127,9 @@ export async function getStaticProps(context) {
   }
 
   const postContent = post.html;
+
+  let updatedContent = String(post.html);
+
   const headings = [
     ...postContent.matchAll(/<h[2].*>(?<heading>.*?)<\/h[2]>/g),
   ];
@@ -141,11 +144,15 @@ export async function getStaticProps(context) {
     day: "numeric",
   };
 
+  for (let i = 0; i < titles.length; i++) {
+    updatedContent = updatedContent.replace(/<h2>/, `<h2 id="${i + 1}">`);
+  }
+
   post.dateFormatted = new Intl.DateTimeFormat("ja-JP", options).format(
     new Date(post.published_at)
   );
 
   return {
-    props: { post, posts, titles: linkedTitles },
+    props: { post, posts, titles: linkedTitles, updatedContent },
   };
 }

@@ -254,6 +254,7 @@ main {
 }
 
 .recommendedPosts {
+  margin-top: 1rem;
   margin-bottom: 1rem;
   display: flex;
   align-items: flex-start;
