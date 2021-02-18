@@ -3,6 +3,12 @@ import Link from "next/link";
 import CategoryGalleryPostsCard from "./CategoryGalleryPostsCard";
 
 const CategoryGalleryPosts = ({ name, posts, icon, url, color }) => {
+  let displayPosts;
+  if (posts.length > 6) {
+    displayPosts = posts.slice(0, 6);
+  } else {
+    displayPosts = posts;
+  }
   return (
     <div className="galleryPost">
       <Link href={`/category/${url}`}>
@@ -16,7 +22,7 @@ const CategoryGalleryPosts = ({ name, posts, icon, url, color }) => {
         </a>
       </Link>
       <div className="galleryPosts__cards">
-        {posts.map((post) => (
+        {displayPosts.map((post) => (
           <CategoryGalleryPostsCard
             key={post.id}
             title={post.title}

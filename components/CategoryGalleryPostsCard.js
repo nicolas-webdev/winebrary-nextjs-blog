@@ -6,7 +6,7 @@ const CategoryGalleryPostsCard = ({ title, image, excerpt, slug, color }) => {
   return (
     <div
       className="galleryPosts__cards__card"
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: "white" }}
     >
       <Link href={`/${slug}`}>
         <a>

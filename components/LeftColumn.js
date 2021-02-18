@@ -13,13 +13,13 @@ const LeftColumn = ({
 }) => {
   return (
     <div className="leftColumn">
+      {!index && <CategoryPosts categoryPosts={categoryPosts} />}
+      <RecommendedPosts posts={posts} />
+      {index && <CategoryGallery tags={tags} />}
       <TextBox
         title={index ? "About" : category.name}
         content={index ? posts[0].authors[0].bio : category.description}
       />
-      {!index && <CategoryPosts categoryPosts={categoryPosts} />}
-      <RecommendedPosts posts={posts} />
-      {index && <CategoryGallery tags={tags} />}
     </div>
   );
 };

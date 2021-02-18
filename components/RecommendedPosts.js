@@ -7,13 +7,13 @@ const RecommendedPosts = ({ posts }) => {
     <div className="recommendedPosts">
       <div className="recommendedPosts__left">
         <div className="recommendedPosts__post1">
-          <Link href={`/${posts[3].slug}`}>
+          <Link href={`/${posts[0].slug}`}>
             <a>
               <Image
-                src={posts[3].feature_image}
+                src={posts[0].feature_image}
                 width={407}
                 height={212}
-                alt={posts[3].title}
+                alt={posts[0].title}
               />
             </a>
           </Link>
@@ -24,13 +24,13 @@ const RecommendedPosts = ({ posts }) => {
           <p>おすすめの記事</p>
         </div>
         <div className="recommendedPosts__post2">
-          <Link href={`/${posts[6].slug}`}>
+          <Link href={`/${posts[1].slug}`}>
             <a>
               <Image
-                src={posts[6].feature_image}
+                src={posts[1].feature_image}
                 width={322}
                 height={169}
-                alt={posts[6].title}
+                alt={posts[1].title}
               />
             </a>
           </Link>
